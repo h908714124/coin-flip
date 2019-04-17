@@ -1,12 +1,18 @@
 package de.h90.coin;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class FlipTest {
 
     @Test
     void testFlip() {
-        Assertions.assertFalse(new Flip().flip143());
+        Flip flip = new Flip();
+        int fail = 0;
+        for (int i = 0; i < 1000; i++) {
+            if (!flip.check(143)) {
+                fail++;
+            }
+        }
+        System.out.println(fail);
     }
 }
